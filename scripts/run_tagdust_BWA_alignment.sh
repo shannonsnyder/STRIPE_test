@@ -53,7 +53,7 @@ OP7=${SAMPLE7}_trno_tagdusted
 
 cd $fastqDir
 
-#${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${daphnia_rep1_R1} ${daphnia_rep1_R21} -o ${OP1}
+${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${daphnia_rep1_R1} ${daphnia_rep1_R2} -o ${OP1}
 #${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${daphnia_rep2_R1} ${daphnia_rep2_R1} -o ${OP2}
 #${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${daphnia_rep3_R1} ${daphnia_rep3_R1} -o ${OP3}
 #${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${daphnia_rep4_R1} ${daphnia_rep4_R2} -o ${OP4}
@@ -76,7 +76,7 @@ do
         echo "bwa aln -t ${THREADS} -n 3 ${GENOME_DIR}/${GENOME_FILE} -f $(basename ${fq} _trno_tagdusted_READ1.fq).sai ${fq} $(basename ${fq} _READ1.fq)_READ2.fq"
   	${BWA} aln -t ${THREADS} -n 3 ${GENOME_DIR}/${GENOME_FILE} -f $(basename ${fq} _trno_tagdusted_READ1.fq).sai ${fq} $(basename ${fq} _READ1.fq)_READ2.fq
 
-echo "$fq"
+	echo "$fq"
 
 echo "${BWA} samse ${GENOME_DIR}/${GENOME_FILE} $(basename $fq .fq_trno_tagdusted.fq).sai $fq | ${SAMTOOLS} view -uS - | ${SAMTOOLS} sort -O BAM - > $(basename $fq .fq_trno_tagdusted.fq)_sorted.bam"
 ${BWA} samse ${GENOME_DIR}/${GENOME_FILE} $(basename $fq _trno_tagdusted_READ1.fq).sai $fq | ${SAMTOOLS} view -uS - | ${SAMTOOLS} sort -O BAM - > $(basename $fq _trno_tagdusted_READ1.fq)_sorted.bam
