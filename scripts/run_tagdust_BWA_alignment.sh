@@ -70,7 +70,7 @@ echo "bwa index ${GENOME_DIR}/${GENOME_FILE}"
 #${BWA}  index ${GENOME_DIR}/${GENOME_FILE}
 
 echo "Starting alignments ..."
-for fq in ${fastqDir}/*_trno_tagdusted_READ1.fq;
+for fq in *_trno_tagdusted_READ1.fq;
 do
 
         echo "bwa aln -t ${THREADS} -n 3 ${GENOME_DIR}/${GENOME_FILE} -f $(basename ${fq} _trno_tagdusted_READ1.fq).sai ${fq} $(basename ${fq} _READ1.fq)_READ2.fq"
