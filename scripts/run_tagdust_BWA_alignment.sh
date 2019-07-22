@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BWADir=/home/ssnyde11/scratch/Dpul_Dobt_fastqs
+BWAdir=/home/ssnyde11/scratch/Dpul_Dobt_fastqs/demultiplexed_matched
 GENOME_DIR=/home/ssnyde11/DpGENOME
 GENOME_FILE=PA42.4.1.fasta
 TAGDUST=/home/ssnyde11/genome_analysis/tagdust-2.33/src/tagdust
