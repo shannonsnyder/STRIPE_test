@@ -6,21 +6,21 @@ TagdustDir=/home/ssnyde11/scratch/Dpul_Dobt_fastqs/demultiplexed_matched
 
 module load fastqc/0.11.7
 
-cd $BWAdir
+#cd $BWAdir
 
-echo "Starting fastqc job"
+#echo "Starting fastqc job"
 
-for fq in unknown_*.fastq
+#for fq in unknown_*.fastq
 
- do
+# do
 
-fastqc $fq
+#fastqc $fq
 
-done
+#done
 
 cd $TagdustDir
 
-for fq in *_trno_tagdusted_?.fq
+for fq in *_trno_tagdusted_READ?.fq
 
 do
 
